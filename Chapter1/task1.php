@@ -5,7 +5,7 @@
 		$counter = 0;
         for ($i = 0; $i < $length; $i++) {
         	if (($number % 10) < 5){
-        		$counter++;;
+        		$counter++;
         	}
         	$number /= 10;
         }
