@@ -5,6 +5,7 @@
 		function __construct($number){
 			$this ->get_number($number);
 		}
+		
 
 		private function get_number($number){
 			if ($this ->simplicity_check($number)){
