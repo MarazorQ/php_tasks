@@ -1,27 +1,37 @@
 <?php
 
-	function seach_maximum_even_element($arr){
-		$max_even_element = 0;
+	function search_max_and_min_elements_of_arr($arr){
+		$max_element_of_arr = 0;
+		$min_element_of_arr = 10;
 
-		for ($i = 2; $i < count($arr); $i += 2){
-			if ($arr[$i] > $max_even_element){
-				$max_even_element = $arr[$i];
+		for ($i = 0; $i < count($arr); $i++){
+			if ($arr[$i] > $max_element_of_arr){
+				$max_element_of_arr = $arr[$i];
+			}
+
+			if ($arr[$i] < $min_element_of_arr){
+				$min_element_of_arr = $arr[$i];
 			}
 		}
 
 		output_arr($arr,2);
-		echo "Maximum event element of array = $max_even_element </br>";
+
+		$arr = replacing_array_elements($arr,$max_element_of_arr,$min_element_of_arr);
+
+		output_arr($arr,2);
 	}
 
-	function search_minimum_uneven_element($arr){
-		$minimum_uneven_element = 0;
+	function replacing_array_elements($arr,$max_element_of_arr,$min_element_of_arr){
+		for ($i = 0; $i <count($arr); $i++){
+			if ($arr[$i] % 2 == 0){
+				$arr[$i] = $max_element_of_arr;
+			}
 
-		for ($i = 0; $i < count($arr); $i++){
-			if (($i % 2 !== 0) && ($arr[$i] < $minimum_uneven_element)){
-				$minimum_uneven_element = $arr[$i];
+			if ($arr[$i] % 2 != 0){
+				$arr[$i] = $min_element_of_arr;
 			}
 		}
-		echo "Minimum uneven element of array = $minimum_uneven_element </br>";
+		return $arr;
 	}
 
 	function output_arr($arr,$flag){
@@ -41,7 +51,6 @@
 
 	$massive = array(1,2,3,4,5,6,7,8,9,10);
 
-	seach_maximum_even_element($massive);
-	search_minimum_uneven_element($massive);
+	search_max_and_min_elements_of_arr($massive);
 
 ?>
