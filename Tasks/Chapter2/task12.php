@@ -47,8 +47,8 @@
 	$massive = create_arr_with_random_value(50,-20,20);
 
 	output_arr($massive,1);
+	
 	echo search_max_of_all_negative($massive) . "</br>";
-	//echo "</br>";
 	echo search_min_of_all_positive($massive);
 
 
